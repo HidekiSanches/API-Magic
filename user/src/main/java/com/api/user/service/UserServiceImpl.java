@@ -42,10 +42,10 @@ public class UserServiceImpl implements UserService{
 
         repository.save(use);
 
-        userComp.setId(repository.findByEmail(use.getEmail()).getId());
-        userComp.setName(repository.findByEmail(use.getEmail()).getName());
-        userComp.setEmail(repository.findByEmail(use.getEmail()).getEmail());
-        userComp.setPassword(repository.findByEmail(use.getEmail()).getPassword());
+        userComp.setId(repository.findByEmail(use.getEmail()).get().getId());
+        userComp.setName(repository.findByEmail(use.getEmail()).get().getName());
+        userComp.setEmail(repository.findByEmail(use.getEmail()).get().getEmail());
+        userComp.setPassword(repository.findByEmail(use.getEmail()).get().getPassword());
 
         return user;
     }

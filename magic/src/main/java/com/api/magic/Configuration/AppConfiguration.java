@@ -1,4 +1,4 @@
-package com.api.user.Configuration;
+package com.api.magic.Configuration;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -23,12 +23,6 @@ public class AppConfiguration {
         return args -> {
             System.out.println("RODANDO O AMBIENTE DE PRODUÇÃO");
         };
-    }
-
-    @Bean
-    @Profile("development")
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
     }
 
 }
